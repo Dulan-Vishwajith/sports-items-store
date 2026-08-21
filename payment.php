@@ -60,7 +60,11 @@ include "includes/header.php";
 </p>
 
 
-<form action="payment.php" method="POST">
+<form
+    action="payment.php"
+    method="POST"
+    id="payment-form"
+>
 
     <input
         type="hidden"
@@ -77,31 +81,52 @@ include "includes/header.php";
 
     <?php if ($payment_method == "Card"): ?>
 
-        <label>Card Number</label>
+        <label>
+            Card Number
+        </label>
 
         <input
             type="text"
+            id="card-number"
+            name="card_number"
             placeholder="1234 5678 9012 3456"
+            maxlength="19"
             required
         >
 
+        <small id="card-error"></small>
 
-        <label>Expiry Date</label>
+
+        <label>
+            Expiry Date
+        </label>
 
         <input
             type="text"
+            id="expiry-date"
+            name="expiry_date"
             placeholder="12/30"
+            maxlength="5"
             required
         >
 
+        <small id="expiry-error"></small>
 
-        <label>CVV</label>
+
+        <label>
+            CVV
+        </label>
 
         <input
-            type="text"
+            type="password"
+            id="cvv"
+            name="cvv"
             placeholder="123"
+            maxlength="3"
             required
         >
+
+        <small id="cvv-error"></small>
 
     <?php endif; ?>
 
@@ -113,7 +138,6 @@ include "includes/header.php";
     </button>
 
 </form>
-
 
 <?php
 
