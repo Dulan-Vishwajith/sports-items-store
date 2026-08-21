@@ -1,0 +1,27 @@
+form {
+    background: white;
+
+    padding: 30px;
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+}
+
+input,
+select,
+textarea {
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+}
